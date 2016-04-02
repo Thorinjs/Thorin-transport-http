@@ -1,0 +1,19 @@
+{
+  "name": "thorin-transport-http",
+  "author": "Stiudeo",
+  "version": "1.0.0",
+  "dependencies": {
+    "async": "^1.4.2"
+  },
+  "description": "Thorin.js HTTP transport",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stiudeo/Thorin-transport-http"
+  },
+  "homepage": "http://thorinjs.com",
+  "bugs": {
+    "url": "https://github.com/Stiudeo/Thorin-transport-http/issues"
+  }
+}
