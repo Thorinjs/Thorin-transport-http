@@ -34,6 +34,7 @@ module.exports = function init(thorin) {
     * */
     init(httpConfig) {
       this[config] = thorin.util.extend({
+        debug: true,
         port: 3000,
         basePath: '/',
         actionPath: '/handle', // this is the default frux listener for incoming frux actions.
@@ -49,7 +50,7 @@ module.exports = function init(thorin) {
           payloadLimit: 50000 // maximum amount of string to process with json
         }
       }, httpConfig);
-      this[app] = new ExpressApp(this[config]);
+      this[app] = new ExpressApp(this[config], this._log.bind(this));
     }
 
     /*
@@ -91,6 +92,15 @@ module.exports = function init(thorin) {
     enableAction(actionName) {
       this.app.enableHandler(actionName);
       return this;
+    }
+
+    /*
+    * This will handle the transport logger.
+    * */
+    _log() {
+      if(this[config].debug === false) return;
+      let logObj = thorin.logger(this.name);
+      logObj.log.apply(logObj, arguments);
     }
   }
 
