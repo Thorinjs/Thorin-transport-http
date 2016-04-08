@@ -12,6 +12,7 @@ module.exports = function init(thorin) {
   const ExpressApp = expressAppLoader(thorin);
   const config = Symbol(),
     running = Symbol(),
+    middleware = Symbol(),
     app = Symbol();
 
   class http extends thorin.Interface.Transport {
@@ -21,6 +22,7 @@ module.exports = function init(thorin) {
       super();
       this.name = 'http';
       this[running] = false;
+      this[middleware] = [];  // additional middleware to use.
       this[config] = {};
       this[app] = null;
     }
@@ -51,6 +53,10 @@ module.exports = function init(thorin) {
         }
       }, httpConfig);
       this[app] = new ExpressApp(this[config], this._log.bind(this));
+      for(let i=0; i < this[middleware].length; i++) {
+        this[app]._addMiddleware(this[middleware][i]);
+      }
+      this[middleware] = [];
     }
 
     /*
@@ -62,6 +68,22 @@ module.exports = function init(thorin) {
         thorin.dispatcher.registerTransport(this);
         done();
       });
+    }
+    /* Manually add an express middleware. */
+    addMiddleware(fn) {
+      if(!this[app]) {
+        this[middleware].push(fn);
+        return this;
+      }
+      if(this.app.running) {
+        console.error('Thorin.transport.http: addMiddleware() must be called before the app is running.');
+        return this;
+      }
+      if(typeof fn !== 'function') {
+        console.error('Thorin.transport.http: addMiddleware(fn) must be called with a function.');
+        return this;
+      }
+      this.app._addMiddleware(fn);
     }
 
     /*
