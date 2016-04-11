@@ -1,6 +1,5 @@
 'use strict';
-const async = require('async'),
-  http = require('http'),
+const http = require('http'),
   path = require('path');
 
 const expressAppLoader = require('./lib/app');
@@ -9,6 +8,7 @@ const expressAppLoader = require('./lib/app');
  * Created by Adrian on 29-Mar-16.
  */
 module.exports = function init(thorin) {
+  const async = thorin.util.async;
   const ExpressApp = expressAppLoader(thorin);
   const config = Symbol(),
     running = Symbol(),
