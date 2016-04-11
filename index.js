@@ -41,8 +41,8 @@ module.exports = function init(thorin) {
         basePath: '/',
         actionPath: '/handle', // this is the default frux listener for incoming frux actions.
         authorization: {
-          source: 'header',  // WHERE to look for the authorization Values are: header, cookies
-          name: 'Authorization' // WHICH one to fetch from there.
+          "header": "Authorization"  // By default, we will look into the "Authorization: Bearer" header
+          //"cookie": "tps"
         },
         ip: '0.0.0.0',
         cors: false,  // Cross origin requests. If set a string, we'll use the domain as the origin, or an array of domains.
