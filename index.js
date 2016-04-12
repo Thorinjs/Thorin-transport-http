@@ -39,7 +39,7 @@ module.exports = function init(thorin) {
         debug: true,
         port: 3000,
         basePath: '/',
-        actionPath: '/handle', // this is the default frux listener for incoming frux actions.
+        actionPath: '/dispatch', // this is the default frux listener for incoming frux actions.
         authorization: {
           "header": "Authorization"  // By default, we will look into the "Authorization: Bearer" header
           //"cookie": "tps"
