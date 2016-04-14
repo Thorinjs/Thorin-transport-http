@@ -2,12 +2,14 @@
 const http = require('http'),
   path = require('path');
 
-const expressAppLoader = require('./lib/app');
+const expressAppLoader = require('./lib/app'),
+  initAction = require('./lib/httpAction');
 
 /**
  * Created by Adrian on 29-Mar-16.
  */
 module.exports = function init(thorin) {
+  initAction(thorin);
   const async = thorin.util.async;
   const ExpressApp = expressAppLoader(thorin);
   const config = Symbol(),
