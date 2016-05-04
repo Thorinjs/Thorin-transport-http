@@ -130,3 +130,4 @@ module.exports = function init(thorin) {
 
   return http;
 };
+module.exports.publicName = 'http';
