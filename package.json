@@ -1,7 +1,7 @@
 {
   "name": "thorin-transport-http",
   "author": "Stiudeo",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "dependencies": {
     "body-parser": "^1.15.0",
     "cookie": "^0.2.3",
