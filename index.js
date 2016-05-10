@@ -62,6 +62,19 @@ module.exports = function init(thorin) {
     }
 
     /*
+    * Sets up the directory structure of the project.
+    * */
+    setup(done) {
+      const SETUP_DIRECTORIES = ['app/actions', 'app/middleware'];
+      for(let i=0; i < SETUP_DIRECTORIES.length; i++) {
+        try {
+          thorin.util.fs.ensureDirSync(path.normalize(thorin.root + '/' + SETUP_DIRECTORIES[i]));
+        } catch(e) {}
+      }
+      done();
+    }
+
+    /*
     * Runs the HTTP Server and binds it to the port.
     * */
     run(done) {
