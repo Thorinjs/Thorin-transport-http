@@ -62,6 +62,13 @@ module.exports = function init(thorin) {
     }
 
     /*
+    * Checks if we trust a reverse proxy or not
+    * */
+    trustProxy() {
+      return this[config].trustProxy;
+    }
+
+    /*
     * Sets up the directory structure of the project.
     * */
     setup(done) {
@@ -110,7 +117,6 @@ module.exports = function init(thorin) {
       for(let i=0; i < actionObj.aliases.length; i++) {
         let alias = actionObj.aliases[i];
         if(typeof alias.verb !== 'string') {
-          console.error('Thorin.transport.http: action ' + actionObj.name + ' alias ' + alias.name + ' does not have a HTTP verb');
           continue;
         }
         this.app.addHandler(actionObj, alias.verb, alias.name);
