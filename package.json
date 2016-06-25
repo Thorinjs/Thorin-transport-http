@@ -1,7 +1,7 @@
 {
   "name": "thorin-transport-http",
   "author": "Stiudeo",
-  "version": "1.0.34",
+  "version": "1.0.35",
   "dependencies": {
     "body-parser": "^1.15.0",
     "cookie": "^0.2.3",
@@ -12,10 +12,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Stiudeo/Thorin-transport-http"
+    "url": "https://github.com/Thorinjs/Thorin-transport-http"
   },
   "homepage": "http://thorinjs.com",
   "bugs": {
-    "url": "https://github.com/Stiudeo/Thorin-transport-http/issues"
+    "url": "https://github.com/Thorinjs/Thorin-transport-http/issues"
   }
 }
