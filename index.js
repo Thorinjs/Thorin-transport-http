@@ -65,6 +65,13 @@ module.exports = function init(thorin) {
     }
 
     /*
+    * Manually return the configuration object of the transport.
+    * */
+    getConfig() {
+      return this[config];
+    }
+
+    /*
      * Checks if we trust a reverse proxy or not
      * */
     trustProxy() {
