@@ -3,8 +3,8 @@
   "author": "Stiudeo",
   "version": "1.0.39",
   "dependencies": {
-    "body-parser": "^1.15.0",
-    "cookie": "^0.2.3",
+    "body-parser": "1.15.0",
+    "cookie": "0.2.3",
     "express": "^4.14.0"
   },
   "description": "Thorin.js HTTP transport",
