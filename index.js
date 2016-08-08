@@ -55,8 +55,12 @@ module.exports = function init(thorin) {
         static: path.normalize(thorin.root + '/public'),       // static path
         options: {
           payloadLimit: 50000 // maximum amount of string to process with json
+        },
+        headers: {  // TODO: add  helmet support
+
         }
       }, httpConfig);
+      thorin.config.set('transport.' + this.name, this[config]);  // update the app with the full config
       this[app] = new ExpressApp(this[config], this._log.bind(this));
       for (let i = 0; i < this[middleware].length; i++) {
         this[app]._addMiddleware(this[middleware][i]);
