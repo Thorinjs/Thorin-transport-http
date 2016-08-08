@@ -56,8 +56,23 @@ module.exports = function init(thorin) {
         options: {
           payloadLimit: 50000 // maximum amount of string to process with json
         },
-        headers: {  // TODO: add  helmet support
-
+        helmet: {   // Default helmet configuration, for full config, see https://github.com/helmetjs/helmet
+          frameguard: false,
+          xssFilter: {
+            setOnOldIE: true
+          },
+          contentSecurityPolicy: {
+            browserSniff: true,
+            disableAndroid: false,
+            setAllHeaders: false
+          },
+          dnsPrefetchControl: {
+            allow: false
+          },
+          hsts: false,
+          ieNoOpen: true,
+          noCache: false,
+          hpkp: false
         }
       }, httpConfig);
       thorin.config.set('transport.' + this.name, this[config]);  // update the app with the full config
