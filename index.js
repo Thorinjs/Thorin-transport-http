@@ -54,7 +54,7 @@ module.exports = function init(thorin) {
         trustProxy: true, // be default, we trust the X-Forwarded-For header.
         static: path.normalize(thorin.root + '/public'),       // static path
         options: {
-          payloadLimit: 50000 // maximum amount of string to process with json
+          payloadLimit: 100000 // maximum amount of string to process with json
         },
         helmet: {   // Default helmet configuration, for full config, see https://github.com/helmetjs/helmet
           frameguard: false,
