@@ -1,11 +1,13 @@
 {
   "name": "thorin-transport-http",
   "author": "Stiudeo",
-  "version": "1.0.54",
+  "version": "1.0.55",
   "dependencies": {
     "body-parser": "1.15.0",
     "cookie": "0.2.3",
+    "etag": "1.7.0",
     "express": "4.14.0",
+    "fresh": "0.3.0",
     "helmet": "2.1.2"
   },
   "description": "Thorin.js HTTP transport",
