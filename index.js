@@ -3,13 +3,15 @@ const http = require('http'),
   path = require('path');
 
 const expressAppLoader = require('./lib/app'),
-  initAction = require('./lib/httpAction');
+  initAction = require('./lib/httpAction'),
+  initIntent = require('./lib/httpIntent');
 
 /**
  * Created by Adrian on 29-Mar-16.
  */
 module.exports = function init(thorin) {
   initAction(thorin);
+  initIntent(thorin);
   const async = thorin.util.async;
   const ExpressApp = expressAppLoader(thorin);
   const config = Symbol(),
