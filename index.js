@@ -48,7 +48,8 @@ module.exports = function init(thorin) {
         basePath: '/',
         actionPath: '/dispatch', // this is the default frux listener for incoming frux actions.
         authorization: {
-          "header": "Authorization"  // By default, we will look into the "Authorization: Bearer" header
+          "header": "Authorization",  // By default, we will look into the "Authorization: Bearer" header
+          "basic": null   // if set to {user,password}, we will apply basic authorization for it. This can be used for fast prototyping of password protected apps.
           //"cookie": "tps"
         },
         ip: '0.0.0.0',
@@ -86,8 +87,8 @@ module.exports = function init(thorin) {
     }
 
     /*
-    * Manually return the configuration object of the transport.
-    * */
+     * Manually return the configuration object of the transport.
+     * */
     getConfig() {
       return this[config];
     }
