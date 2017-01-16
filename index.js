@@ -78,6 +78,9 @@ module.exports = function init(thorin) {
           hpkp: false
         }
       }, httpConfig);
+      if (typeof this[config].actionPath === 'string') {
+        this[config].actionPath = [this[config].actionPath];
+      }
       thorin.config.set('transport.' + this.name, this[config]);  // update the app with the full config
       this[app] = new ExpressApp(this[config], this._log.bind(this));
       for (let i = 0; i < this[middleware].length; i++) {
