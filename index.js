@@ -24,9 +24,12 @@ module.exports = function init(thorin) {
       return "http";
     }
 
-    constructor() {
+    constructor(thorin, name) {
       super();
       this.name = 'http';
+      if (typeof name === 'string' && name) {
+        this.name = name;
+      }
       this[running] = false;
       this[middleware] = [];  // additional middleware to use.
       this[config] = {};
