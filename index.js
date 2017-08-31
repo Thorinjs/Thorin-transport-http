@@ -12,7 +12,6 @@ const expressAppLoader = require('./lib/app'),
 module.exports = function init(thorin) {
   initAction(thorin);
   initIntent(thorin);
-  const async = thorin.util.async;
   const ExpressApp = expressAppLoader(thorin);
   const config = Symbol(),
     running = Symbol(),
@@ -57,6 +56,7 @@ module.exports = function init(thorin) {
         },
         ip: '0.0.0.0',
         cors: false,  // Cross origin requests. If set a string, we'll use the domain as the origin, or an array of domains.
+        corsIgnore: null, // If specified, we will ignore these hosts in CORS requests. Array or string
         trustProxy: true, // be default, we trust the X-Forwarded-For header.
         static: path.normalize(thorin.root + '/public'),       // static path
         options: {
