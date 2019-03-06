@@ -71,7 +71,11 @@ module.exports = function init(thorin) {
           contentSecurityPolicy: {
             browserSniff: true,
             disableAndroid: false,
-            setAllHeaders: false
+            setAllHeaders: false,
+            directives: {
+              objectSrc: ["'none'"],
+              workerSrc: false  // This is not set.
+            }
           },
           dnsPrefetchControl: {
             allow: false
