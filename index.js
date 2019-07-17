@@ -63,6 +63,7 @@ module.exports = function init(thorin) {
           payloadLimit: 100000 // maximum amount of string to process with json
         },
         ignoreHeaders: null,  // An array of ignored HTTP Headers.
+        hideType: false,  // If set to true, hide the "type" field in the result object
         helmet: {   // Default helmet configuration, for full config, see https://github.com/helmetjs/helmet
           frameguard: false,
           xssFilter: {
