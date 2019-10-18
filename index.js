@@ -64,6 +64,7 @@ module.exports = function init(thorin) {
         },
         ignoreHeaders: null,  // An array of ignored HTTP Headers.
         hideType: false,  // If set to true, hide the "type" field in the result object
+        rawText: false,   // If set to true, we will parse raw text/plain POST requests and place the text under intentObj.rawInput._text
         helmet: {   // Default helmet configuration, for full config, see https://github.com/helmetjs/helmet
           frameguard: false,
           xssFilter: {
