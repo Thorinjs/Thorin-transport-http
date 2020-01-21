@@ -8,7 +8,7 @@
     "etag": "1.8.1",
     "express": "4.17.1",
     "fresh": "0.5.2",
-    "helmet": "3.21.1"
+    "helmet": "3.21.2"
   },
   "description": "Thorin.js HTTP transport",
   "main": "index.js",
