@@ -1,14 +1,13 @@
 {
   "name": "thorin-transport-http",
   "author": "UNLOQ Systems",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "dependencies": {
     "body-parser": "1.19.0",
     "cookie": "0.4.0",
     "etag": "1.8.1",
     "express": "4.17.1",
-    "fresh": "0.5.2",
-    "helmet": "3.21.2"
+    "helmet": "3.22.0"
   },
   "description": "Thorin.js HTTP transport",
   "main": "index.js",
@@ -16,6 +15,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Thorinjs/Thorin-transport-http"
+  },
+  "engines": {
+    "node": ">= 12.10.0"
   },
   "homepage": "http://thorinjs.com",
   "bugs": {
