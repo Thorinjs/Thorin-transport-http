@@ -1,7 +1,7 @@
 {
   "name": "thorin-transport-http",
   "author": "UNLOQ Systems",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "dependencies": {
     "body-parser": "1.19.0",
     "cookie": "0.4.0",
