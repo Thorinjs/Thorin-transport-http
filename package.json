@@ -6,7 +6,7 @@
     "body-parser": "1.19.0",
     "cookie": "0.4.0",
     "etag": "1.8.1",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "fresh": "0.5.2",
     "helmet": "3.21.2"
   },
