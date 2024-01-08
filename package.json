@@ -3,11 +3,11 @@
   "author": "UNLOQ Systems",
   "version": "2.1.0",
   "dependencies": {
-    "body-parser": "1.20.1",
-    "cookie": "0.4.1",
+    "body-parser": "1.20.2",
+    "cookie": "0.6.0",
     "etag": "1.8.1",
     "express": "4.18.2",
-    "helmet": "3.23.3"
+    "helmet": "7.1.0"
   },
   "description": "Thorin.js HTTP transport",
   "main": "index.js",
