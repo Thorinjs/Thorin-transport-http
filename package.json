@@ -1,12 +1,12 @@
 {
   "name": "thorin-transport-http",
   "author": "UNLOQ Systems",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "dependencies": {
     "body-parser": "1.20.2",
     "cookie": "0.6.0",
     "etag": "1.8.1",
-    "express": "4.19.1",
+    "express": "4.19.2",
     "helmet": "7.1.0"
   },
   "description": "Thorin.js HTTP transport",
