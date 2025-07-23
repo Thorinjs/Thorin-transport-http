@@ -67,16 +67,13 @@ module.exports = function init(thorin) {
         rawText: false,   // If set to true, we will parse raw text/plain POST requests and place the text under intentObj.rawInput._text
         helmet: {   // Default helmet configuration, for full config, see https://github.com/helmetjs/helmet
           frameguard: false,
-          xssFilter: {
-            setOnOldIE: true
-          },
           contentSecurityPolicy: {
             browserSniff: true,
             disableAndroid: false,
             setAllHeaders: false,
             directives: {
               objectSrc: ["'none'"],
-              workerSrc: false  // This is not set.
+              workerSrc: null  // This is not set.
             }
           },
           dnsPrefetchControl: {
